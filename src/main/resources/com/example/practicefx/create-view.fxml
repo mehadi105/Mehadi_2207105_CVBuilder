@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="950" prefWidth="900" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practicefx.CreateController">
+
+    <top>
+        <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+            <Label style="-fx-font-weight: bold; -fx-letter-spacing: 1; -fx-padding: 25 0 15 0;" text="Create Your Professional CV" textFill="#FFD700">
+                <font><Font size="26" /></font>
+            </Label>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true" style="-fx-background: transparent; -fx-background-color: transparent;">
+            <GridPane alignment="CENTER" hgap="30" style="-fx-background-color: rgba(255,255,255,0.05); -fx-background-radius: 20; -fx-padding: 40;" vgap="22" BorderPane.alignment="CENTER">
+                <BorderPane.margin>
+                    <Insets bottom="40" left="100" right="100" top="40" />
+                </BorderPane.margin>
+
+                <columnConstraints>
+                    <ColumnConstraints prefWidth="260" />
+                    <ColumnConstraints prefWidth="480" />
+                </columnConstraints>
+
+                <rowConstraints>
+                    <RowConstraints prefHeight="50" /> <RowConstraints prefHeight="50" /> <RowConstraints prefHeight="90" /> <RowConstraints prefHeight="90" /> <RowConstraints prefHeight="50" /> <RowConstraints prefHeight="50" /> <RowConstraints prefHeight="50" /> <RowConstraints prefHeight="50" /> <RowConstraints prefHeight="110" /> <RowConstraints prefHeight="110" /> <RowConstraints prefHeight="110" /> <RowConstraints prefHeight="110" />
+                </rowConstraints>
+
+                <Label text="Full Name" textFill="#FFD700" GridPane.rowIndex="0">
+                    <font><Font size="16" /></font>
+                </Label>
+                <TextField fx:id="inputName" promptText="Enter your name" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <effect><Glow level="0.0" /></effect>
+                </TextField>
+
+                <Label text="Email" textFill="#FFD700" GridPane.rowIndex="1">
+                    <font><Font size="16" /></font>
+                </Label>
+                <TextField fx:id="inputEmail" promptText="Enter your email address" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Phone Number" textFill="#FFD700" GridPane.rowIndex="2">
+                    <font><Font size="16" /></font>
+                </Label>
+                <TextArea fx:id="inputNumber" promptText="Enter your phone number" style="-fx-background-radius: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="Address" textFill="#FFD700" GridPane.rowIndex="3">
+                    <font><Font size="16" /></font>
+                </Label>
+                <TextArea fx:id="inputAdd" promptText="Enter your address" style="-fx-background-radius: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+
+                <Label text="Educational Qualifications" textFill="#FFD700" GridPane.rowIndex="4">
+                    <font><Font size="16" /></font>
+                </Label>
+
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                    <TextField fx:id="exam1Field" prefWidth="120" promptText="Examination" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="inst1Field" prefWidth="120" promptText="Institution" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="major1Field" prefWidth="80" promptText="Major" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="year1Field" prefWidth="50" promptText="Year" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="grade1Field" prefWidth="50" promptText="Grade" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <Label text=" " textFill="#FFD700" GridPane.rowIndex="5" />
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <TextField fx:id="exam2Field" prefWidth="120" promptText="Examination" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="inst2Field" prefWidth="120" promptText="Institution" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="major2Field" prefWidth="80" promptText="Major" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="year2Field" prefWidth="50" promptText="Year" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="grade2Field" prefWidth="50" promptText="Grade" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <Label text=" " textFill="#FFD700" GridPane.rowIndex="6" />
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <TextField fx:id="exam3Field" prefWidth="120" promptText="Examination" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="inst3Field" prefWidth="120" promptText="Institution" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="major3Field" prefWidth="80" promptText="Major" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="year3Field" prefWidth="50" promptText="Year" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="grade3Field" prefWidth="50" promptText="Grade" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <Label text=" " textFill="#FFD700" GridPane.rowIndex="7" />
+                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <TextField fx:id="exam4Field" prefWidth="120" promptText="Examination" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="inst4Field" prefWidth="120" promptText="Institution" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="major4Field" prefWidth="80" promptText="Major" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="year4Field" prefWidth="50" promptText="Year" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                    <TextField fx:id="grade4Field" prefWidth="50" promptText="Grade" style="-fx-background-radius: 6; -fx-padding: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" HBox.hgrow="ALWAYS" />
+                </HBox>
+
+                <Label text="Skills" textFill="#FFD700" GridPane.rowIndex="8">
+                    <font><Font size="16" /></font>
+                </Label>
+                <TextArea fx:id="inputSkills" promptText="Add your skills" style="-fx-background-radius: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+                <Label text="Work Experience" textFill="#FFD700" GridPane.rowIndex="9">
+                    <font><Font size="16" /></font>
+                </Label>
+                <TextArea fx:id="inputWork" promptText="Share your work experience" style="-fx-background-radius: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+
+                <Label text="Projects" textFill="#FFD700" GridPane.rowIndex="10">
+                    <font><Font size="16" /></font>
+                </Label>
+                <TextArea fx:id="inputProject" promptText="Include your projects" style="-fx-background-radius: 8; -fx-control-inner-background: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #FFD700;" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+
+                <Label text="Profile Picture" textFill="#FFD700" GridPane.rowIndex="11">
+                    <font><Font size="16" /></font>
+                </Label>
+                <HBox spacing="20" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                    <Button onAction="#onChooseImage" style="-fx-background-color: #1E90FF; -fx-text-fill: white; -fx-background-radius: 6; -fx-padding: 8 16;" text="Choose Image" />
+                    <ImageView fx:id="profileImageView" fitHeight="90" fitWidth="90" preserveRatio="true" style="-fx-border-color: #FFD700; -fx-border-width: 1.2; -fx-background-radius: 10;" />
+                </HBox>
+
+            </GridPane>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" prefHeight="90" spacing="0" BorderPane.alignment="CENTER">
+            <Button fx:id="btCVBuild" contentDisplay="CENTER" onAction="#OnbtnClkBuildCv" style="-fx-background-color: #1E90FF; -fx-text-fill: white; -fx-font-size: 16; -fx-padding: 10 30; -fx-background-radius: 10;" text="Create CV" />
+        </HBox>
+    </bottom>
+</BorderPane>

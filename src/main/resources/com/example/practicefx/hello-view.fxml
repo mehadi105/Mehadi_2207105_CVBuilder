@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="433.0" prefWidth="649.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practicefx.HelloController">
+    <children>
+        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="250.0" spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label text="Welcome to CV Builder" textFill="#e5f80e">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+                <Button mnemonicParsing="false" onAction="#onCreateNewCV" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #1E90FF; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Create new CV" />
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="previewRoot" prefHeight="1100.0" prefWidth="800.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practicefx.PreviewController">
+    <padding>
+        <Insets bottom="40.0" left="60.0" right="60.0" top="40.0" />
+    </padding>
+
+    <top>
+        <VBox spacing="20.0" alignment="TOP_CENTER" BorderPane.alignment="CENTER">
+
+            <Label fx:id="mainTitleLabel" text="Curriculum Vitae of [Full Name]" style="-fx-font-weight: bold; -fx-text-fill: #1E90FF; -fx-padding: 0 0 10 0;">
+                <font>
+                    <Font size="26.0" />
+                </font>
+            </Label>
+
+            <HBox alignment="TOP_LEFT" spacing="30.0">
+                <children>
+                    <VBox HBox.hgrow="ALWAYS" spacing="5.0">
+                        <Label fx:id="nameLabel" text="[FULL NAME]" style="-fx-font-weight: bold; -fx-text-fill: #FFD700;">
+                            <font>
+                                <Font size="38.0" />
+                            </font>
+                        </Label>
+
+                        <VBox spacing="3.0">
+                            <Label fx:id="emailLabel" text="[Email Address]" style="-fx-text-fill: #1E90FF;">
+                                <font><Font size="14.0" /></font>
+                            </Label>
+                            <Label fx:id="phoneLabel" text="[Phone Number]" style="-fx-text-fill: #1E90FF;">
+                                <font><Font size="14.0" /></font>
+                            </Label>
+                            <Label fx:id="addressLabel" text="[Address]" style="-fx-text-fill: #1E90FF;">
+                                <font><Font size="14.0" /></font>
+                            </Label>
+                        </VBox>
+                    </VBox>
+
+                    <StackPane>
+                        <ImageView fx:id="profileImageView" fitHeight="120.0" fitWidth="120.0" preserveRatio="true" style="-fx-border-color: #FFD700; -fx-border-width: 3; -fx-background-color: #0d0d0d;" />
+                        <Label text="Photo" textFill="#FFD700" visible="true" fx:id="photoPlaceholder" />
+                    </StackPane>
+                </children>
+            </HBox>
+            <BorderPane.margin>
+                <Insets bottom="30.0" />
+            </BorderPane.margin>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="35.0">
+
+            <VBox>
+                <Label text="SKILLS" style="-fx-font-weight: bold; -fx-text-fill: #FFD700; -fx-border-width: 0 0 2 0; -fx-border-color: #1E90FF;">
+                    <font><Font size="20.0" /></font>
+                    <padding><Insets bottom="5.0" /></padding>
+                </Label>
+                <VBox fx:id="skillsContainer" spacing="5.0" style="-fx-padding: 10 0 0 10;"/>
+            </VBox>
+
+            <VBox>
+                <Label text="WORK EXPERIENCE" style="-fx-font-weight: bold; -fx-text-fill: #FFD700; -fx-border-width: 0 0 2 0; -fx-border-color: #1E90FF;">
+                    <font><Font size="20.0" /></font>
+                    <padding><Insets bottom="5.0" /></padding>
+                </Label>
+                <VBox fx:id="workContainer" spacing="5.0" style="-fx-padding: 10 0 0 10;"/>
+            </VBox>
+
+            <VBox>
+                <Label text="EDUCATION" style="-fx-font-weight: bold; -fx-text-fill: #FFD700; -fx-border-width: 0 0 2 0; -fx-border-color: #1E90FF;">
+                    <font><Font size="20.0" /></font>
+                    <padding><Insets bottom="5.0" /></padding>
+                </Label>
+                <VBox fx:id="educationContainer" spacing="15.0" style="-fx-padding: 15; -fx-border-color: #1E90FF; -fx-border-width: 1; -fx-background-color: #0d0d0d; -fx-background-radius: 5;"/>
+            </VBox>
+
+            <VBox>
+                <Label text="PROJECTS" style="-fx-font-weight: bold; -fx-text-fill: #FFD700; -fx-border-width: 0 0 2 0; -fx-border-color: #1E90FF;">
+                    <font><Font size="20.0" /></font>
+                    <padding><Insets bottom="5.0" /></padding>
+                </Label>
+                <VBox fx:id="projectsContainer" spacing="5.0" style="-fx-padding: 10 0 0 10;"/>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
