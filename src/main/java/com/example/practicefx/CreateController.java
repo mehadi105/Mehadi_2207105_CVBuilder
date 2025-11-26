@@ -35,6 +35,7 @@ public class CreateController {
 
     @FXML private ImageView profileImageView;
     private File selectedImageFile;
+    private Integer editingCvId = null;
 
     @FXML
     private void onChooseImage(ActionEvent event) {
@@ -90,21 +91,33 @@ public class CreateController {
 
             try {
                 DatabaseManager dbManager = DatabaseManager.getInstance();
-                int cvId = dbManager.insertCV(cv);
+                boolean success;
                 
-                if (cvId > 0) {
+                if (editingCvId != null) {
+                    cv.setId(editingCvId);
+                    success = dbManager.updateCV(cv);
+                } else {
+                    int cvId = dbManager.insertCV(cv);
+                    success = cvId > 0;
+                }
+                
+                if (success) {
                     Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                     successAlert.setTitle("Success");
                     successAlert.setHeaderText(null);
-                    successAlert.setContentText("CV saved successfully!");
+                    successAlert.setContentText(editingCvId != null ? "CV updated successfully!" : "CV saved successfully!");
                     successAlert.showAndWait();
                     
-                    launchPreview();
+                    if (editingCvId != null) {
+                        ((Stage) inputName.getScene().getWindow()).close();
+                    } else {
+                        launchPreview();
+                    }
                 } else {
                     Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                     errorAlert.setTitle("Error");
                     errorAlert.setHeaderText(null);
-                    errorAlert.setContentText("Failed to save CV to database. No ID returned.");
+                    errorAlert.setContentText("Failed to save CV to database.");
                     errorAlert.showAndWait();
                 }
             } catch (Exception e) {
@@ -201,6 +214,43 @@ public class CreateController {
         } catch (IOException e) {
             System.err.println("Error launching preview-view.fxml:");
             e.printStackTrace();
+        }
+    }
+
+    public void loadCVData(CV cv) {
+        editingCvId = cv.getId();
+        
+        inputName.setText(cv.getName());
+        inputEmail.setText(cv.getEmail());
+        inputNumber.setText(cv.getPhone());
+        inputAdd.setText(cv.getAddress());
+        inputSkills.setText(cv.getSkills());
+        inputWork.setText(cv.getWorkExperience());
+        inputProject.setText(cv.getProjects());
+        
+        if (cv.getImagePath() != null) {
+            File imageFile = new File(cv.getImagePath());
+            if (imageFile.exists()) {
+                selectedImageFile = imageFile;
+                profileImageView.setImage(new Image(imageFile.toURI().toString()));
+            }
+        }
+        
+        List<EducationEntry> entries = cv.getEducationEntries();
+        TextField[][] educationRows = {
+            {exam1Field, inst1Field, major1Field, year1Field, grade1Field},
+            {exam2Field, inst2Field, major2Field, year2Field, grade2Field},
+            {exam3Field, inst3Field, major3Field, year3Field, grade3Field},
+            {exam4Field, inst4Field, major4Field, year4Field, grade4Field}
+        };
+        
+        for (int i = 0; i < educationRows.length && entries != null && i < entries.size(); i++) {
+            EducationEntry entry = entries.get(i);
+            educationRows[i][0].setText(entry.getExamination());
+            educationRows[i][1].setText(entry.getInstitution());
+            educationRows[i][2].setText(entry.getMajor());
+            educationRows[i][3].setText(entry.getYear());
+            educationRows[i][4].setText(entry.getGrade());
         }
     }
 }
