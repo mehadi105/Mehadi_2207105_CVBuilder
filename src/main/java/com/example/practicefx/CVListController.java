@@ -119,6 +119,10 @@ public class CVListController {
             e.printStackTrace();
         }
     }
+    
+    public void refreshList() {
+        loadCVs();
+    }
 
     private void loadCVs() {
         cvList.clear();
@@ -179,6 +183,8 @@ public class CVListController {
             CreateController editController = loader.getController();
             editController.loadCVData(cv);
 
+            editStage.setOnHidden(e -> loadCVs());
+            
             editStage.show();
         } catch (IOException e) {
             e.printStackTrace();

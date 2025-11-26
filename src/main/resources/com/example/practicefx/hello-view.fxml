@@ -14,6 +14,7 @@
                     </font>
                 </Label>
                 <Button mnemonicParsing="false" onAction="#onCreateNewCV" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #1E90FF; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="Create new CV" />
+                <Button mnemonicParsing="false" onAction="#onViewAllCVs" prefHeight="45.0" prefWidth="180.0" style="-fx-background-color: #32CD32; -fx-text-fill: white; -fx-font-size: 16px; -fx-background-radius: 8;" text="View All CVs" />
             </children>
         </VBox>
     </children>

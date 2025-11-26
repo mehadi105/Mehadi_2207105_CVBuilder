@@ -108,9 +108,7 @@ public class CreateController {
                     successAlert.setContentText(editingCvId != null ? "CV updated successfully!" : "CV saved successfully!");
                     successAlert.showAndWait();
                     
-                    if (editingCvId != null) {
-                        ((Stage) inputName.getScene().getWindow()).close();
-                    } else {
+                    if (editingCvId == null) {
                         launchPreview();
                     }
                 } else {
