@@ -56,7 +56,65 @@ public class CreateController {
     @FXML
     private void OnbtnClkBuildCv(ActionEvent event) {
         if (validateAllFields()) {
-            launchPreview();
+            CV cv = new CV();
+            cv.setName(inputName.getText().trim());
+            cv.setEmail(inputEmail.getText().trim());
+            cv.setPhone(inputNumber.getText().trim());
+            cv.setAddress(inputAdd.getText().trim());
+            cv.setSkills(inputSkills.getText().trim());
+            cv.setWorkExperience(inputWork.getText().trim());
+            cv.setProjects(inputProject.getText().trim());
+            cv.setImagePath(selectedImageFile != null ? selectedImageFile.getAbsolutePath() : null);
+
+            List<EducationEntry> educationEntries = new ArrayList<>();
+            TextField[][] educationRows = {
+                {exam1Field, inst1Field, major1Field, year1Field, grade1Field},
+                {exam2Field, inst2Field, major2Field, year2Field, grade2Field},
+                {exam3Field, inst3Field, major3Field, year3Field, grade3Field},
+                {exam4Field, inst4Field, major4Field, year4Field, grade4Field}
+            };
+
+            for (TextField[] row : educationRows) {
+                if (row[0].getText() != null && !row[0].getText().trim().isEmpty()) {
+                    EducationEntry entry = new EducationEntry(
+                        row[0].getText().trim(),
+                        row[1].getText().trim(),
+                        row[2].getText().trim(),
+                        row[3].getText().trim(),
+                        row[4].getText().trim()
+                    );
+                    educationEntries.add(entry);
+                }
+            }
+            cv.setEducationEntries(educationEntries);
+
+            try {
+                DatabaseManager dbManager = DatabaseManager.getInstance();
+                int cvId = dbManager.insertCV(cv);
+                
+                if (cvId > 0) {
+                    Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
+                    successAlert.setTitle("Success");
+                    successAlert.setHeaderText(null);
+                    successAlert.setContentText("CV saved successfully!");
+                    successAlert.showAndWait();
+                    
+                    launchPreview();
+                } else {
+                    Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                    errorAlert.setTitle("Error");
+                    errorAlert.setHeaderText(null);
+                    errorAlert.setContentText("Failed to save CV to database. No ID returned.");
+                    errorAlert.showAndWait();
+                }
+            } catch (Exception e) {
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setTitle("Error");
+                errorAlert.setHeaderText("Database Error");
+                errorAlert.setContentText("Failed to save CV: " + e.getMessage());
+                errorAlert.showAndWait();
+                e.printStackTrace();
+            }
         }
     }
 
