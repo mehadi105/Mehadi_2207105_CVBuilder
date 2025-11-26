@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="600" prefWidth="800" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.practicefx.CVListController">
+    <top>
+        <HBox alignment="CENTER" spacing="20" style="-fx-padding: 20;">
+            <Label text="All CVs" textFill="#FFD700">
+                <font><Font size="28" /></font>
+            </Label>
+        </HBox>
+    </top>
+    
+    <center>
+        <VBox spacing="10" style="-fx-padding: 20;">
+            <TableView fx:id="cvTableView" prefHeight="400" style="-fx-background-color: #1a1a1a;">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="50">
+                        <style>
+                            -fx-text-fill: #FFD700;
+                            -fx-alignment: CENTER;
+                        </style>
+                    </TableColumn>
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="250">
+                        <style>
+                            -fx-text-fill: #FFD700;
+                        </style>
+                    </TableColumn>
+                    <TableColumn fx:id="emailColumn" text="Email" prefWidth="300">
+                        <style>
+                            -fx-text-fill: #FFD700;
+                        </style>
+                    </TableColumn>
+                </columns>
+            </TableView>
+            
+            <HBox spacing="10" alignment="CENTER">
+                <Button fx:id="viewButton" onAction="#onView" text="View" 
+                    style="-fx-background-color: #1E90FF; -fx-text-fill: white; -fx-padding: 8 16; -fx-background-radius: 6;" />
+                <Button fx:id="editButton" onAction="#onEdit" text="Edit" 
+                    style="-fx-background-color: #32CD32; -fx-text-fill: white; -fx-padding: 8 16; -fx-background-radius: 6;" />
+                <Button fx:id="deleteButton" onAction="#onDelete" text="Delete" 
+                    style="-fx-background-color: #DC143C; -fx-text-fill: white; -fx-padding: 8 16; -fx-background-radius: 6;" />
+                <Button fx:id="refreshButton" onAction="#onRefresh" text="Refresh" 
+                    style="-fx-background-color: #FFD700; -fx-text-fill: black; -fx-padding: 8 16; -fx-background-radius: 6;" />
+                <Button onAction="#onBack" text="Back" 
+                    style="-fx-background-color: #808080; -fx-text-fill: white; -fx-padding: 8 16; -fx-background-radius: 6;" />
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
+
